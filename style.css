@@ -1,0 +1,656 @@
+@font-face {
+    font-family: 'avenir_next_lt_probold';
+    src: url('fonts/avenirnextltpro-bold-webfont.woff2') format('woff2'),
+         url('fonts/avenirnextltpro-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'avenir_next_lt_proitalic';
+    src: url('fonts/avenirnextltpro-it-webfont.woff2') format('woff2'),
+         url('fonts/avenirnextltpro-it-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'avenir_next_lt_proregular';
+    src: url('fonts/avenirnextltpro-regular-webfont.woff2') format('woff2'),
+         url('fonts/avenirnextltpro-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* style.css */
+
+.logo-img {
+    width: 150px;
+    height: 50.92px;
+    margin: 10px 25px;
+}
+
+.navbar {
+    background-color: #f8f9fa;
+    padding: 10px; /* Reduced padding for better alignment with always collapsed */
+}
+
+.navbar-toggler {
+    border: none !important; /* Remove the border */
+    padding: 0.25rem 0.5rem; /* Adjust padding if needed */
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important; /* Remove focus outline if desired */
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 4em;
+    height: 2em;
+    vertical-align: middle;
+    content: "";
+    background: none !important; /* Remove default background */
+    position: relative;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    content: "\00D7"; /* Unicode for the multiplication sign (X) */
+    font-size: 2em; /* Adjust size of the X */
+    color: black; /* Set the color of the X */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.navbar-toggler[aria-expanded="false"] .navbar-toggler-icon::before {
+    content: "≡"; /* Unicode for the hamburger icon */
+    font-size: 2em; /* Adjust size of the hamburger */
+    color: black; /* Set the color of the hamburger */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+}
+
+/* Style for "Find Workers" */
+.worker-dropdown > .nav-link {
+    color: white !important;
+    background-color: #800080 !important; /* Dark Purple */
+}
+
+.worker-dropdown .dropdown-menu {
+    background-color: #e6ccff !important; /* Light Purple */
+}
+
+.worker-dropdown .dropdown-item {
+    color: #800080 !important;
+}
+
+.worker-dropdown .dropdown-item:hover,
+.worker-dropdown .dropdown-item:focus {
+    background-color: #b366b3 !important;
+    color: white !important;
+}
+
+/* Style for "Find Work" */
+.work-dropdown > .nav-link {
+    color: black !important;
+    background-color: #ADD8E6 !important; /* Light Blue */
+}
+
+.work-dropdown .dropdown-menu {
+    background-color: #E0FFFF !important; /* Lighter Blue */
+}
+
+.work-dropdown .dropdown-item {
+    color: #ADD8E6 !important;
+}
+
+.work-dropdown .dropdown-item:hover,
+.work-dropdown .dropdown-item:focus {
+    background-color: #B0E0E6 !important;
+    color: black !important;
+}
+
+/* Style for "About", "Community", "Media", "Blog", "Contact" */
+.about-dropdown > .nav-link,
+.community-dropdown > .nav-link,
+.media-dropdown > .nav-link,
+.blog-dropdown > .nav-link,
+.contact-link > .nav-link {
+    color: black !important;
+    background-color: #D3D3D3 !important; /* Light Ash (Light Gray) */
+}
+
+.about-dropdown .dropdown-menu,
+.community-dropdown .dropdown-menu,
+.media-dropdown .dropdown-menu,
+.blog-dropdown .dropdown-menu {
+    background-color: #808080 !important; /* Gray */
+}
+
+.about-dropdown .dropdown-item,
+.community-dropdown .dropdown-item,
+.media-dropdown .dropdown-item,
+.blog-dropdown .dropdown-item {
+    color: #696969 !important; /* Darker Gray for Item Text */
+}
+
+.about-dropdown .dropdown-item:hover,
+.about-dropdown .dropdown-item:focus,
+.community-dropdown .dropdown-item:hover,
+.community-dropdown .dropdown-item:focus,
+.media-dropdown .dropdown-item:hover,
+.media-dropdown .dropdown-item:focus,
+.blog-dropdown .dropdown-item:hover,
+.blog-dropdown .dropdown-item:focus {
+    background-color: #A9A9A9 !important; /* Medium Gray on Hover */
+    color: white !important;
+}
+
+/* Style for "Contact" text color */
+.contact-link > .nav-link {
+    color: #696969 !important; /* Darker Gray for Contact text */
+}
+
+.slider-container {
+    width: 100%; /* Adjust as needed */
+    height: 420px; /* Adjust as needed */
+    overflow: hidden;
+    position: relative;
+    margin-top: 0 !important;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+}
+
+.slider {
+    display: flex;
+    width: 200%; /* To accommodate two slides side-by-side initially */
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0); /* Start at the first slide */
+}
+
+.slide {
+    width: 50%; /* Each slide takes up half the slider width */
+    flex-shrink: 0; /* Prevent slides from shrinking */
+    position: relative;
+}
+
+.slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain image aspect ratio and cover the container */
+}
+
+.slide-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Keep vertical arrangement */
+    align-items: flex-start; /* Align items (including the button) to the left horizontally */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width and height */
+}
+
+.slide-content h2 {
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-bottom: 1px;
+    text-align: left;
+    font-size: 45px; 
+}
+.slide-content p {
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 30px; 
+    font-weight: 500;
+}
+
+
+.appicon {
+   margin-left: 25px;
+   margin-top: 20px;
+    width: 200px !important; /* Adjust as needed */
+    height: auto !important;
+    margin-right: 10px; /* Add some space between the icons */
+    display: inline-block !important; /* Ensure icons are inline */
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition */
+}
+
+.appicon:hover {
+    transform: scale(1.1); /* Scale the image up by 10% on hover */
+}
+/* Remove margin from the last app icon in the row */
+.appicon:last-child {
+    margin-right: 0;
+}
+
+.slider-navigation {
+    position: absolute; /* Position them relative to the slider container */
+    bottom: 50px; /* Adjust vertical position */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    display: flex;
+    gap: 10px; /* Space between the icons */
+}
+
+.nav-icon {
+    width: 12px; /* Adjust size */
+    height: 12px;
+    border-radius: 50%; /* Make them circles */
+    background-color: #fffbfb; /* Default color */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for color change */
+}
+
+.nav-icon.active {
+    background-color: #b8b9b9; /* Color for the active slide's icon (adjust) */
+}
+
+.nav-icon:hover {
+    background-color: #555; /* Slightly change color on hover for interaction feedback */
+}
+
+.slide-content button {
+    
+    margin-left: 25px;
+    margin-bottom: 1px;
+    background-color: transparent;  
+    color: white; 
+    border: 2px solid white; 
+    padding: 5px 20px; 
+    border-radius: 25px;
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.rounded-transparent-button:hover {
+    background-color: rgb(255, 255, 255); 
+    color: white; 
+    border-color: white;
+}
+
+.work-description {
+    padding: 8%;
+   
+    color: #333333; /* Grey text */
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    font-family: 'avenir_next_lt_proregular', sans-serif !important;
+    font-size: 55px;
+    font-weight: 500;
+    font-stretch: 100%;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    text-align: center; /* Centralize text */
+    text-indent: 0px;
+  }
+   .bold {
+    padding: 8%;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    color: #333333; /* Grey text */
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    font-family: 'avenir_next_lt_proregular', sans-serif !important;
+    font-size: 60px;
+    font-weight: 600;
+    font-stretch: 100%;
+    
+    text-align: center; /* Centralize text */
+    text-indent: 0px;
+  }
+ 
+  .business-benefits {
+    padding: 8%;
+    margin-top: 0px !important;
+    margin-bottom: 0 !important; 
+    
+    color: #333333; /* Grey text */
+    background-color: rgb(207, 203, 203); /* Transparent background */
+    font-family: 'avenir_next_lt_proregular', sans-serif !important;
+    font-size: 55px;
+    font-weight: 500;
+    font-stretch: 100%;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    text-align: center; /* Centralize text */
+    text-indent: 0px;
+  }
+
+  .line {
+    margin-bottom: auto;
+    padding: 0;
+  }
+
+  .benefit-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+/* Tasker Benefits */
+.business-benefits2 {
+    padding: 8%;
+    margin-top: 0px !important;
+    margin-bottom: 0 !important;
+
+    color: #ffffff !important; /* Grey text */
+    background-color: #3F6EAA; /* Transparent background */
+    font-family: 'avenir_next_lt_proregular', sans-serif !important;
+    font-size: 55px;
+    font-weight: 500;
+    font-stretch: 100%;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    text-align: center; /* Centralize text */
+    text-indent: 0px;
+}
+
+.business-benefits2 h1 {
+    color: #ffffff !important; /* Grey text */
+}
+
+.svg-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3F6EAA;
+}
+
+.svg-circle-wrapper2 {
+    position: relative;
+    margin-top: 150px !important;
+    margin-bottom: 10px !important;
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.svg-icon2 {
+    width: 180px !important;
+    margin-top: 25px !important;
+    object-fit: contain;
+    filter: grayscale(100%) sepia(25%) brightness(110%) hue-rotate(185deg) saturate(300%) !important;
+    transition: filter 0.3s ease;
+}
+
+.svg-text2 {
+    margin-top: 70px;
+    color: #ffffff; /* Grey text */
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    font-family: 'avenir_next_lt_proregular', sans-serif !important;
+    font-size: 40px;
+    text-align: center;
+    width: 100%; /* Make the text span the full width of its parent */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 0 10px; /* Add some horizontal padding for better readability if needed */
+}
+
+.svg-circle-wrapper2:hover .svg-icon2,
+.svg-circle-wrapper2.active .svg-icon2 {
+    filter: none;
+    background-color: transparent;
+}
+
+.bsbtn2 {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 3px solid rgb(128, 123, 123) !important;
+    padding: 15px 80px !important;
+    border-radius: 70px !important;
+    cursor: pointer;
+    font-size: 40px !important;
+    font-weight: 20em !important; /* Note: 'em' unit might not be intended here for font-weight */
+    margin: 60px !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bsbtn2:hover {
+    background-color: rgb(255, 255, 255);
+    /* You might want to define text color on hover, e.g., color: #3F6EAA; */
+    color: white; /* Kept original, but might not be desired */
+    border-color: white;
+}
+
+/* Business Benefits */
+/* Assuming .business-benefits class is defined elsewhere if needed */
+.svg-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E3EAF2;
+}
+
+.svg-circle-wrapper {
+    position: relative;
+    margin-top: 150px !important;
+    margin-bottom: 10px !important;
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.svg-icon {
+    width: 180px !important;
+    margin-top: 25px !important;
+    object-fit: contain;
+    filter: grayscale(100%) sepia(25%) brightness(110%) hue-rotate(185deg) saturate(300%);
+    transition: filter 0.3s ease;
+}
+
+.svg-text {
+    margin-top: 70px;
+    color: #333333; /* Grey text */
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    font-family: 'avenir_next_lt_proregular', sans-serif !important;
+    font-size: 40px;
+    text-align: center;
+    width: 100%; /* Make the text span the full width of its parent */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 0 10px; /* Add some horizontal padding for better readability if needed */
+}
+
+.svg-circle-wrapper:hover .svg-icon,
+.svg-circle-wrapper.active .svg-icon {
+    filter: none;
+}
+
+/* Remove background color on hover or active */
+.svg-circle-wrapper:hover .svg-icon,
+.svg-circle-wrapper.active .svg-icon {
+    background-color: transparent;
+}
+
+.bsbtn {
+    background-color: transparent !important;
+    color: #3a4c61 !important;
+    border: 3px solid rgb(128, 123, 123) !important;
+    padding: 15px 80px !important;
+    border-radius: 70px !important;
+    cursor: pointer;
+    font-size: 40px !important;
+    font-weight: 20em !important; /* Note: 'em' unit might not be intended here for font-weight */
+    margin: 60px !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bsbtn:hover {
+    background-color: rgb(255, 255, 255);
+     /* You might want to define text color on hover, e.g., color: #3a4c61; */
+    color: white; /* Kept original, but might not be desired */
+    border-color: white;
+}
+
+.app-download {
+    text-align: center; /* This will center the inline-block elements (images) */
+  }
+
+.appicon2 {
+    margin-left: 25px;
+    margin-top: 20px;
+    
+     width: 400px !important; /* Adjust as needed */
+     height: auto !important;
+     margin-right: 10px; /* Add some space between the icons */
+     display: inline-block !important; /* Ensure icons are inline */
+     transition: transform 0.3s ease-in-out; /* Add a smooth transition */
+ }
+ 
+ .appicon2:hover {
+     transform: scale(1.1); /* Scale the image up by 10% on hover */
+ }
+
+ .bold2 {
+    padding: 8%;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    color: #6b6969; /* Grey text */
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    font-family: 'avenir_next_lt_proregular', sans-serif !important;
+    font-size: 60px;
+    font-weight: 600;
+    font-stretch: 100%;
+    
+    text-align: center; /* Centralize text */
+    text-indent: 0px;
+  }
+
+  .my-slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .my-slide-active {
+    display: flex;
+  }
+  
+  .my-slide-heading {
+    color: white;
+    position: relative;
+    z-index: 1;
+    font-size: 100px;
+    font-weight: 600;
+    font-family: 'avenir_next_lt_proregular', sans-serif !important;
+    margin-bottom: 0rem;
+    
+  }
+  
+  .my-slide-description {
+    color: #d1d5db;
+    margin-top: 0rem;
+    margin-bottom: 90px;
+    font-size: 50px;
+    position: relative;
+    z-index: 1;
+    font-family: 'avenir_next_lt_proregular', sans-serif !important;
+  }
+  
+  .my-slider-container {
+    margin-top: 50px;
+    width: 100%;
+    height: 600px;
+    display: grid;
+    align-items: center;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    position: relative;
+  }
+  
+  .my-slider-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 20px;
+    space-x: 0.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .my-indicator {
+    margin-bottom: 50px !important;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition-property: background-color;
+    transition-duration: 300ms;
+  }
+  
+  .my-indicator:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .my-indicator.bg-opacity-100 {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  
+  .my-slider-background-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    /* background-image: url('');  Removed inline style */
+  }
+  
+  .my-slide-icon {
+    margin-top: 50px !important;
+    height: 120px;
+    width: 160px;
+    margin-bottom: 1rem;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    /* background-image: url(''); Removed inline style */
+  }
+  
+  /* New CSS Rules for Data Attributes */
+  .my-slider-background-image[data-bg-image] {
+    background-image: var(--bg-image);
+  }
+  
+  .my-slide-icon[data-icon-image] {
+    background-image: var(--icon-image);
+  }
