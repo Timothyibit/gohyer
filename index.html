@@ -2,24 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hyer | On-Demand Labour for Business</title>
 <link href="style.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="script.js" rel="script">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7j3z5l5e5c5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    
 
-    <nav class="navbar  navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
             <img class="logo-img" src="images/logo-hyer.png" alt="Hyer Logo">
         </a>
+
+        <!-- Navbar toggler for smaller screens -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- Collapsable navbar for smaller screens -->
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
+                <!-- Find Workers -->
                 <li class="nav-item dropdown worker-dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownFindWorkers" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Find Workers
@@ -31,6 +40,8 @@
                         <li><a class="dropdown-item" href="#">Services Offered</a></li>
                     </ul>
                 </li>
+
+                <!-- Find Work -->
                 <li class="nav-item dropdown work-dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownFindWork" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Find Work
@@ -42,6 +53,8 @@
                         <li><a class="dropdown-item" href="#">Job Categories</a></li>
                     </ul>
                 </li>
+
+                <!-- About -->
                 <li class="nav-item dropdown about-dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAbout" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         About
@@ -52,6 +65,8 @@
                         <li><a class="dropdown-item" href="#">Careers</a></li>
                     </ul>
                 </li>
+
+                <!-- Community -->
                 <li class="nav-item dropdown community-dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCommunity" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Community
@@ -62,6 +77,8 @@
                         <li><a class="dropdown-item" href="#">Resources</a></li>
                     </ul>
                 </li>
+
+                <!-- Media -->
                 <li class="nav-item dropdown media-dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMedia" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Media
@@ -72,6 +89,8 @@
                         <li><a class="dropdown-item" href="#">Downloads</a></li>
                     </ul>
                 </li>
+
+                <!-- Blog -->
                 <li class="nav-item dropdown blog-dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Blog
@@ -82,13 +101,97 @@
                         <li><a class="dropdown-item" href="#">Archives</a></li>
                     </ul>
                 </li>
+
+                <!-- Contact -->
                 <li class="nav-item contact-link">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
             </ul>
         </div>
+
+        <!-- Desktop-only: Find Workers, Find Work, Hyer Flex on right -->
+        <ul class="navbar-nav desktop-only-nav ms-auto forced-horizontal">
+            <!-- Find Workers -->
+            <li class="nav-item dropdown worker-dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="desktopDropdownFindWorkers" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Find Workers
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="desktopDropdownFindWorkers">
+                    <li><a class="dropdown-item" href="#">Browse Workers</a></li>
+                    <li><a class="dropdown-item" href="#">Post a Job</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Services Offered</a></li>
+                </ul>
+            </li>
+        
+            <!-- Find Work -->
+            <li class="nav-item dropdown work-dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="desktopDropdownFindWork" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Find Work
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="desktopDropdownFindWork">
+                    <li><a class="dropdown-item" href="#">Browse Jobs</a></li>
+                    <li><a class="dropdown-item" href="#">Create Your Profile</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                   <li><a class="dropdown-item" href="#">Job Categories</a></li>
+                </ul>
+            </li>
+        
+            <!-- Hyer Flex -->
+            <li class="nav-item hyerflex-link">
+                <a class="nav-link" href="#">Hyer Flex</a>
+            </li>
+        </ul>
+        
+        
     </div>
 </nav>
+
+<!-- SECOND HEADER: Visible only on larger screens -->
+<div class="second-header d-none d-lg-flex">
+    <div class="left-section">
+        <a href="#" class="login-btn">Customer Login</a>
+    </div>
+    <div class="right-section">
+        <div class="dropdown">
+            <a href="#" class="dropdown-toggle">About</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Our Mission</a></li>
+                <li><a class="dropdown-item" href="#">Our Team</a></li>
+                <li><a class="dropdown-item" href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <a href="#" class="dropdown-toggle">Community</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Forums</a></li>
+                <li><a class="dropdown-item" href="#">Events</a></li>
+                <li><a class="dropdown-item" href="#">Resources</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <a href="#" class="dropdown-toggle">Media</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Press Releases</a></li>
+                <li><a class="dropdown-item" href="#">In the News</a></li>
+                <li><a class="dropdown-item" href="#">Downloads</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <a href="#" class="dropdown-toggle">Blog</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Latest Posts</a></li>
+                <li><a class="dropdown-item" href="#">Categories</a></li>
+                <li><a class="dropdown-item" href="#">Archives</a></li>
+            </ul>
+        </div>
+        <a href="#">Contact</a>
+    </div>
+</div>
+
+  
+
+
 
 <div class="slider-container">
     <div class="slider">
@@ -97,16 +200,19 @@
             <div class="slide-content">
                 <h2>Real-Time Help is Here</h2>
                 <p>Delivering on-demand labor with the tap of an app.</p>
-                <button class="btn btn-primary">Learn More</button>
+                <div class="btn-container">
+                    <button class="tpbtn btn-success">Learn More</button>
+                    <p class="small-text"> Find Workers ></p> 
+                </div>
             </div>
         </div>
         <div class="slide" id="slide-2">
             <img src="images/slide (1).jpg" alt="Image 2">
             <div class="slide-content">
-                <h2>Better Work. Better Lives.</h2>
+                <h2 class="txt2">Better Work. Better Lives.</h2>
                 <p>Fulfilling work with the tap of an app.</p>
-                <button class="btn btn-success">Learn More</button>
-                <div> 
+                <button class="tpbtn btn-success">Learn More</button>
+                <div class="imgcnt"> 
                 <img class="appicon" src="images/appicon (2).png" alt="Image 2" class="img-fluid">
                 <img class="appicon" src="images/appicon (1).png" alt="Image 2" class="img-fluid">
                 </div>
@@ -120,66 +226,83 @@
 </div>
 
 <div class="work-description">
-    <h1 class="bold">Reinventing How Work Gets Done</h1>
-    <img src="images/line.png">
+    <h1 class="bolds">Reinventing How Work Gets Done</h1>
+    <img class="lines" src="images/line.png">
     <p>Hyer is a simple, straightforward app that connects businesses to on-demand labor and individuals to immediate work in real-time. It’s a two-way street that works for everyone. For a better way to work—and a better way to live.</p>
   </div>
- <hr>
- <div class="business-benefits">
-    <h1 class="bold">Business Benefits</h1>
-    <img class="line" src="images/line.png">
-</div>
-<div>
-    <img class="benefit-img" src="images/benefits-1.jpg" alt="Benefit 2">
-</div>
+ <div>
 
-<div class="svg-container">
-    <div class="svg-circle-wrapper" onclick="setActiveBusiness(0)"> <img src="images/oval (1).svg" alt="Icon 1" class="svg-icon">
-        <div class="svg-overlay"></div>
+    <div class="business-benefits-container">
+        <div class="benefit-image-container">
+          <img class="benefit-img" src="images/benefits-1.jpg" alt="Benefit 2">
+        </div>
+        <div class="right-content">
+          <div class="business-benefits">
+            <h1 class="bold">Business Benefits</h1>
+            <img class="line" src="images/line.png">
+          </div>
+      
+          <div class="svg-container">
+            <div class="svg-circle-wrapper" onclick="setActiveBusiness(0)">
+              <img src="images/oval (1).svg" alt="Icon 1" class="svg-icon">
+              <div class="svg-overlay"></div>
+            </div>
+            <p class="svg-text">No sign-up fees, contracts or commitments.</p>
+      
+            <div class="svg-circle-wrapper" onclick="setActiveBusiness(1)">
+              <img src="images/oval (2).svg" alt="Icon 2" class="svg-icon">
+              <div class="svg-overlay"></div>
+            </div>
+            <p class="svg-text">View profiles then select a Tasker-you're in control.</p>
+            
+            <div class="svg-circle-wrapper" onclick="setActiveBusiness(2)">
+              <img src="images/oval (3).svg" alt="Icon 3" class="svg-icon">
+              <div class="svg-overlay"></div>
+              
+            </div>
+           
+            <p class="svg-text">Like a Tasker? Hire them for free! No Strings attached.</p>
+              <button class="btn bsbtnsv">Schedule Demo</button>
+            
+          </div>
+           
+        </div>
+      </div>
+
+<div class="business-benefits-container2">
+    
+        
+        <div class="left-content2">
+        <div class="business-benefits2">
+            <h1 class="bold">Tasker Benefits</h1>
+            <img class="line white" src="images/line white.png">
+        </div>
+        <div class="svg-container2">
+            <div class="svg-circle-wrapper2" onclick="setActiveTasker(0)">
+                <img src="images/Tasker_Active_Find-Work-1.svg" alt="Icon 1" class="svg-icon2">
+                <div class="svg-overlay2"></div>
+            </div>
+            <p class="svg-text2">Find immediate, flexible work with an easy to use app.</p>
+
+            <div class="svg-circle-wrapper2" onclick="setActiveTasker(1)">
+                <img src="images/Tasker_Active_Calendar.svg" alt="Icon 2" class="svg-icon2">
+                <div class="svg-overlay2"></div>
+            </div>
+            <p class="svg-text2">Work when and where you want- you're in control!</p>
+
+            <div class="svg-circle-wrapper2" onclick="setActiveTasker(2)">
+                <img src="images/Tasker_Active_Rate-Experience.svg" alt="Icon 3" class="svg-icon2">
+                <div class="svg-overlay2"></div>
+            </div>
+            <p class="svg-text2">Get paid quickly with instant payout.</p>
+
+            <button class="btn bsbtnsv2">Learn More</button>
+        </div>
     </div>
-    <p class="svg-text">No sign-up fees, contracts or commitments.</p>
-
-    <div class="svg-circle-wrapper" onclick="setActiveBusiness(1)"> <img src="images/oval (2).svg" alt="Icon 2" class="svg-icon">
-        <div class="svg-overlay"></div>
+    <div class="right-image-container2">
+        <img class="benefit-img2" src="images/tasker-img-1.jpg" alt="Benefit 2">
     </div>
-    <p class="svg-text">View profiles then select a Tasker-you're in control.</p>
-
-    <div class="svg-circle-wrapper" onclick="setActiveBusiness(2)"> <img src="images/oval (3).svg" alt="Icon 3" class="svg-icon">
-        <div class="svg-overlay"></div>
-    </div>
-    <p class="svg-text">Like a Tasker? Hire them for free! No Strings attached.</p>
-
-    <button class="btn bsbtn">Schedule Demo</button>
 </div>
-
-<div class="business-benefits2">
-    <h1 class="bold">Tasker Benefits</h1>
-    <img class="line" src="images/line white.png">
-</div>
-<div>
-    <img class="benefit-img" src="images/tasker-img-1.jpg" alt="Benefit 2">
-</div>
-
-<div class="svg-container2">
-    <div class="svg-circle-wrapper2" onclick="setActiveTasker(0)"> <img src="images/Tasker_Active_Find-Work-1.svg" alt="Icon 1" class="svg-icon2">
-        <div class="svg-overlay2"></div>
-    </div>
-    <p class="svg-text2">Find immediate, flexible with an easy to use app.</p>
-
-    <div class="svg-circle-wrapper2" onclick="setActiveTasker(1)"> <img src="images/Tasker_Active_Calendar.svg" alt="Icon 2" class="svg-icon2">
-        <div class="svg-overlay2"></div>
-    </div>
-    <p class="svg-text2">Work when and where you want- you're in control!</p>
-
-    <div class="svg-circle-wrapper2" onclick="setActiveTasker(2)"> <img src="images/Tasker_Active_Rate-Experience.svg" alt="Icon 3" class="svg-icon2">
-        <div class="svg-overlay2"></div>
-    </div>
-    <p class="svg-text2">Get paid quickly with instant payout.</p>
-
-    <button class="btn bsbtn2">Learn More</button>
-</div>
-
-
 
 <div class="app-download"> 
     <p class="bold2">Download Hyer Today!</p>
@@ -212,25 +335,262 @@
       <hr>
  </div>
 
- <div class="business-benefits2">
-    <h1 class="bold">Tasker Benefits</h1>
-    <img class="line" src="images/line white.png">
+  
+<div class="work-description">
+    <h1 class="bolds">Amazing Partners</h1>
+    <img class="lines" src="images/line.png">
+</div>
+   
+<div class="image_slider_container">
+    <div class="image_slider_wrapper">
+        <div class="image_slide">
+            <img src="images/complogo (1).png" alt="Image 1">
+        </div>
+        <div class="image_slide">
+            <img src="images/complogo (2).png" alt="Image 2">
+        </div>
+        <div class="image_slide">
+            <img src="images/complogo (3).png" alt="Image 3">
+        </div>
+        <div class="image_slide">
+            <img src="images/complogo (4).png" alt="Image 4">
+        </div>
+        <div class="image_slide">
+            <img src="images/complogo (5).png" alt="Image 5">
+        </div>
+        <div class="image_slide">
+            <img src="images/complogo (6).png" alt="Image 6">
+        </div>
+        <div class="image_slide">
+            <img src="images/complogo (7).png" alt="Image 7">
+        </div>
+        <div class="image_slide">
+            <img src="images/complogo (8).png" alt="Image 8">
+        </div>
+        <div class="image_slide">
+            <img src="images/complogo (9).png" alt="Image 8">
+        </div>
+        <div class="image_slide">
+            <img src="images/complogo (10).png" alt="Image 8">
+        </div>
+    </div>
 </div>
 
 
+<div class="hero-container">
+        <header class="site-header">
+            <h1 class="bold3">People are Talking</h1>
+            <img class="line" src="images/line-black-300x22.png">
+        </header>
+
+        <div class="hero-body">
+            <div class="content-slider">
+                <div class="slider-track" id="slideTrack">
+                    <div class="slider-item is-active">“It used to take us one to two weeks to get someone in the door. Once we started using Hyer, we were able to post a job and within 30-minutes we would have Taskers applying. I love that I can post a task and have someone here working within a couple of hours.” <br> <br> Leading Manufacturer</div>
+                    <div class="slider-item">"With Hyer, I am in control of my work life. The flexibility to work where, how and with whom I want is great—making decisions for the lifestyle I want. Hyer has given me the wonderful opportunity to earn as much income as I desire. There is no limit!"
+                     <br> <br> Alyona │ Hyer Tasker</div>
+                    <div class="slider-item">“Where we have implemented, Hyer and the Hyer Taskers are doing a remarkable job.
+                        The rate on requested jobs is well over 90%. The Hyer team has been a great partner—a blessing as we manage our way through these unusual times.”
+                        <br> <br> Leading Retailer</div>
+                    <div class="slider-item">“Leveraging Hyer we’ve seen a sizable sales lift of 40% compared to stores where we were not using Hyer. In addition, using Hyer Taskers drove unit sales up 84%. Of the 10 stores, 70% saw between a 100% to 375% increase in unit sales. A WIN-WIN-WIN for the books!” <br> <br> National Beverage Company</div>
+                    <div class="slider-item">"I enjoy the flexibility of working through the Hyer App. Being able to create my own schedule has given me the opportunity to remain financially stable and continue to be consistently active in my children’s and family’s lives."
+                        <br> <br> Christina │ Hyer Tasker</div>
+                </div>
+            </div>
+            <div class="slider-controls" id="slideControls">
+                <button class="control-button is-active" data-slide="0"></button>
+                <button class="control-button" data-slide="1"></button>
+                <button class="control-button" data-slide="2"></button>
+                <button class="control-button" data-slide="3"></button>
+                <button class="control-button" data-slide="4"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="gradient-container">
+        <h1 class="bold4">Create a Free Business Profile</h1>
+        <div class="svg-text3">Discover how easy it is to get the help you need.
+
+            Create your free business profile today, only pay once your task is completed.
+        
+        </div>
+        <button class="bsbtn2 btn-primary">Get Started</button>
+        </div>
+
+        <div class="work-description">
+           
+            <img class="lineimgs" src="images/Hyer-Life-1.png">
+        </div>
 
 
-  <h1 class="bold">Business Benefits</h1>
-  <h1 class="bold">Business Benefits</h1>
-  <h1 class="bold">Business Benefits</h1>
-  <h1 class="bold">Business Benefits</h1>
-  <h1 class="bold">Business Benefits</h1>
-  <h1 class="bold">Business Benefits</h1>
-  <h1 class="bold">Business Benefits</h1>
-  <h1 class="bold">Business Benefits</h1>
+
+
+        <div class="news-slider-container">
+            <div class="news-slider-wrapper">
+              <div class="news-slider-item">
+                <img src="images/news (1).jpg" alt="News Image 1" class="news-slider-image">
+                <div class="news-slider-details">
+                  <p class="news-slider-date">October 26, 2023</p>
+                  <h3 class="news-slider-heading">March 2025 Tasker of the Month </h3>
+                  <p class="news-slider-text">Congrats to Dominique, our March Tasker of the Month! “I signed up as a Tasker in March of…</p>
+                </div>
+              </div>
+              <div class="news-slider-item">
+                <img src="images/news (1).png" alt="News Image 2" class="news-slider-image">
+                <div class="news-slider-details">
+                  <p class="news-slider-date">October 27, 2023</p>
+                  <h3 class="news-slider-heading">HyerMoney 2nd Edition</h3>
+                  <p class="news-slider-text"> Welcome back to the 2nd edition of Hyer Money. March’s post is all about how to take advantage…</p>
+                </div>
+              </div>
+              <div class="news-slider-item">
+                <img src="images/news (2).jpg" alt="News Image 3" class="news-slider-image">
+                <div class="news-slider-details">
+                  <p class="news-slider-date">October 28, 2023</p>
+                  <h3 class="news-slider-heading">HyerMoney</h3>
+                  <p class="news-slider-text"> We are kicking off 2025 with a new blog to talk about everyday topics that relate to your…</p>
+                </div>
+              </div>
+              <div class="news-slider-item">
+                <img src="images/news (2).png" alt="News Image 4" class="news-slider-image">
+                <div class="news-slider-details">
+                  <p class="news-slider-date">October 29, 2023</p>
+                  <h3 class="news-slider-heading">February 2025 Tasker of the Month</h3>
+                  <p class="news-slider-text"> Congrats to Yolanda, our February Tasker of the Month! I started with Hyer in August of 2024, when…</p>
+                </div>
+              </div>
+              <div class="news-slider-item">
+                <img src="images/news (3).png" alt="News Image 5" class="news-slider-image">
+                <div class="news-slider-details">
+                  <p class="news-slider-date">October 30, 2023</p>
+                  <h3 class="news-slider-heading">The Human Cloud Podcast: Talent Platforms & The Frontline Workforce </h3>
+                  <p class="news-slider-text">The frontline workforce faces massive challenges: high churn, rising costs, and burned-out managers. The solution? Apps like Hyer…</p>
+                </div>
+              </div>
+              <div class="news-slider-item">
+                <img src="images/news (4).png" alt="News Image 6" class="news-slider-image">
+                <div class="news-slider-details">
+                  <p class="news-slider-date">October 31, 2023</p>
+                  <h3 class="news-slider-heading">January 2025 Tasker of the Month</h3>
+                  <p class="news-slider-text"> Congrats to Dave, our January Tasker of the Month! I’m a retired superstore management professional. I started with…</p>
+                </div>
+              </div>
+              <div class="news-slider-item">
+                <img src="images/news (5).png" alt="News Image 7" class="news-slider-image">
+                <div class="news-slider-details">
+                  <p class="news-slider-date">November 1, 2023</p>
+                  <h3 class="news-slider-heading">December 2024 Tasker of the Month</h3>
+                  <p class="news-slider-text"> Congrats to Willie, our December Tasker of the Month! Last year, I signed up to be a Tasker…</p>
+                </div>
+              </div>
+              <div class="news-slider-item">
+                <img src="images/news (5).png" alt="News Image 8" class="news-slider-image">
+                <div class="news-slider-details">
+                  <p class="news-slider-date">November 2, 2023</p>
+                  <h3 class="news-slider-heading">November 2024 Tasker of the Month</h3>
+                  <p class="news-slider-text"> Congrats to Dana, our November Tasker of the Month! I became a Hyer Tasker in 2023, and the…</p>
+                </div>
+              </div>
+              <div class="news-slider-item">
+                <img src="images/news (6).png" alt="News Image 9" class="news-slider-image">
+                <div class="news-slider-details">
+                  <p class="news-slider-date">November 3, 2023</p>
+                  <h3 class="news-slider-heading">October 2024 Tasker of the Month</h3>
+                  <p class="news-slider-text"> Congrats to Bethanie, our October Tasker of the Month! “I was getting burnt out as I had been…</p>
+                </div>
+              </div>
+              <div class="news-slider-item">
+                <img src="images/news (1).jpg" alt="News Image 10" class="news-slider-image">
+                <div class="news-slider-details">
+                  <p class="news-slider-date">November 4, 2023</p>
+                  <h3 class="news-slider-heading">Retail’s Workforce Dilemma: Overcoming Labor Shortages with the Gig Economy</h3>
+                  <p class="news-slider-text"> With nearly 60% of retail executives citing labor shortages as their top operational challenge, Dave Dempsey shares how…</p>
+                </div>
+              </div>
+            </div>
+            <div class="news-slider-indicator">
+              <div class="news-slider-indicator-circle active"></div>
+              <div class="news-slider-indicator-circle"></div>
+              <div class="news-slider-indicator-circle"></div>
+              <div class="news-slider-indicator-circle"></div>
+              <div class="news-slider-indicator-circle"></div>
+              <div class="news-slider-indicator-circle"></div>
+              <div class="news-slider-indicator-circle"></div>
+              <div class="news-slider-indicator-circle"></div>
+              <div class="news-slider-indicator-circle"></div>
+              <div class="news-slider-indicator-circle"></div>
+            </div>
+          </div>
+
+          
+  
     
     
-       
+  <footer>
+    <div class="footer-top">
+      <div class="footer-section">
+        <h3>Hyer</h3>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Leadership Team</a></li>
+          <li><a href="#">Media</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Get Started</h3>
+        <ul>
+          <li><a href="#">Find Work</a></li>
+          <li><a href="#">Hire Help</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Diversity &amp; Inclusion</a></li>
+        </ul>
+      </div>
+      <div class="footer-section app-section">
+        <h3>Get the App</h3>
+        <div class="app-badges">
+          <img src="images/appicon (2).png" alt="App Store">
+          <img src="images/appicon (1).png" alt="Google Play">
+        </div>
+      </div>
+
+      <div class="newsletter-section">
+        <h3>Don’t Miss a Thing</h3>
+        <p>Join our Newsletter for updates, offers, and more.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Email">
+          <button type="submit">Submit</button>
+        </form>
+        <div class="social-links">
+          <a href="YOUR_FACEBOOK_PROFILE_LINK"><i class="fab fa-facebook"></i></a>
+          <a href="YOUR_INSTAGRAM_PROFILE_LINK"><i class="fab fa-instagram"></i></a>
+          <a href="YOUR_LINKEDIN_PROFILE_LINK"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+
+    </div>
+  
+    
+  
+    <div class="footer-bottom">
+      <div class="copyright">© 2023 Frictionless Enterprises Inc.</div>
+      <div class="bottom-links">
+        <a href="#">Hyer Standard Policy</a>
+        <span class="separator">|</span>
+        <a href="#">Legal</a>
+        <span class="separator">|</span>
+        <a href="#">Support</a>
+      </div>
+    </div>
+  </footer>
+
+ 
 
 <script src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -31,16 +31,32 @@
 
 }
 
+
+body {
+    margin: 0!important;
+    padding: 0!important; /* Reset default body margin to avoid scrollbars */
+  }
+  .full-width-div {
+    width: 100vw!important;
+    
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+  }
+
 /* style.css */
 
 .logo-img {
-    width: 150px;
-    height: 50.92px;
+    margin-top: 5px!important;
+    margin-bottom: 7px!important;
+    width: 200px;
+    height: 100%;
     margin: 10px 25px;
 }
 
 .navbar {
     background-color: #f8f9fa;
+    width: 100vw!important;
     padding: 10px; /* Reduced padding for better alignment with always collapsed */
 }
 
@@ -55,8 +71,8 @@
 
 .navbar-toggler-icon {
     display: inline-block;
-    width: 4em;
-    height: 2em;
+    width: 100px !important; /* Let the width be determined by content */
+    height: auto !important; /* Let the height be determined by content */
     vertical-align: middle;
     content: "";
     background: none !important; /* Remove default background */
@@ -65,7 +81,7 @@
 
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
     content: "\00D7"; /* Unicode for the multiplication sign (X) */
-    font-size: 2em; /* Adjust size of the X */
+    font-size: 4em; /* Increase this value to make the 'X' bigger */
     color: black; /* Set the color of the X */
     position: absolute;
     top: 50%;
@@ -75,56 +91,112 @@
 
 .navbar-toggler[aria-expanded="false"] .navbar-toggler-icon::before {
     content: "≡"; /* Unicode for the hamburger icon */
-    font-size: 2em; /* Adjust size of the hamburger */
-    color: black; /* Set the color of the hamburger */
+    font-size: 4em; /* Increase this value to make the hamburger bigger */
+    color: rgb(43, 43, 43); /* Set the color of the hamburger */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 .navbar-nav .nav-link {
     font-size: 18px;
 }
 
+.second-header {
+    display: none;
+  }
+
+  .desktop-only-nav {
+    display: none;
+  }
+
+@media (max-width: 500px) {
+    
+
+    .logo-img {
+      width: 100px;
+    }    
+    
+    .navbar-toggler {
+        border: none !important; /* Remove the border */
+        padding: 0.25rem 0.5rem; /* Adjust padding if needed */
+    }
+    
+    .navbar-toggler:focus {
+        box-shadow: none !important; /* Remove focus outline if desired */
+    }
+    
+    .navbar-toggler-icon {
+        
+        width: auto !important; /* Let the width be determined by content */
+        height: auto !important; /* Let the height be determined by content */
+        margin: 5px;
+        margin-bottom:15px;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+        font-size: 2em; /* Increase this value to make the 'X' bigger */
+    }
+    
+    .navbar-toggler[aria-expanded="false"] .navbar-toggler-icon::before {
+        font-size: 2em; /* Increase this value to make the hamburger bigger */
+    }
+    .navbar-nav .nav-link {
+        font-size: 18px;
+    }
+
+    .second-header {
+        display: none;
+      }
+
+      .desktop-only-nav {
+        display: none;
+      }
+}
+
+.desktop-only-nav {
+    display: none  !important;
+
+
+    
 /* Style for "Find Workers" */
 .worker-dropdown > .nav-link {
-    color: white !important;
-    background-color: #800080 !important; /* Dark Purple */
+  color: white !important;
+  background-color: #800080 !important; /* Dark Purple */
 }
 
 .worker-dropdown .dropdown-menu {
-    background-color: #e6ccff !important; /* Light Purple */
+  background-color: #e6ccff !important; /* Light Purple */
 }
 
 .worker-dropdown .dropdown-item {
-    color: #800080 !important;
+  color: #800080 !important;
 }
 
 .worker-dropdown .dropdown-item:hover,
 .worker-dropdown .dropdown-item:focus {
-    background-color: #b366b3 !important;
-    color: white !important;
+  background-color: #b366b3 !important;
+  color: white !important;
 }
 
 /* Style for "Find Work" */
 .work-dropdown > .nav-link {
-    color: black !important;
-    background-color: #ADD8E6 !important; /* Light Blue */
+  color: black !important;
+  background-color: #ADD8E6 !important; /* Light Blue */
 }
 
 .work-dropdown .dropdown-menu {
-    background-color: #E0FFFF !important; /* Lighter Blue */
+  background-color: #E0FFFF !important; /* Lighter Blue */
 }
 
 .work-dropdown .dropdown-item {
-    color: #ADD8E6 !important;
+  color: #ADD8E6 !important;
 }
 
 .work-dropdown .dropdown-item:hover,
 .work-dropdown .dropdown-item:focus {
-    background-color: #B0E0E6 !important;
-    color: black !important;
+  background-color: #B0E0E6 !important;
+  color: black !important;
 }
 
 /* Style for "About", "Community", "Media", "Blog", "Contact" */
@@ -133,22 +205,22 @@
 .media-dropdown > .nav-link,
 .blog-dropdown > .nav-link,
 .contact-link > .nav-link {
-    color: black !important;
-    background-color: #D3D3D3 !important; /* Light Ash (Light Gray) */
+  color: black !important;
+  background-color: #D3D3D3 !important; /* Light Ash (Light Gray) */
 }
 
 .about-dropdown .dropdown-menu,
 .community-dropdown .dropdown-menu,
 .media-dropdown .dropdown-menu,
 .blog-dropdown .dropdown-menu {
-    background-color: #808080 !important; /* Gray */
+  background-color: #808080 !important; /* Gray */
 }
 
 .about-dropdown .dropdown-item,
 .community-dropdown .dropdown-item,
 .media-dropdown .dropdown-item,
 .blog-dropdown .dropdown-item {
-    color: #696969 !important; /* Darker Gray for Item Text */
+  color: #696969 !important; /* Darker Gray for Item Text */
 }
 
 .about-dropdown .dropdown-item:hover,
@@ -159,23 +231,201 @@
 .media-dropdown .dropdown-item:focus,
 .blog-dropdown .dropdown-item:hover,
 .blog-dropdown .dropdown-item:focus {
-    background-color: #A9A9A9 !important; /* Medium Gray on Hover */
-    color: white !important;
+  background-color: #A9A9A9 !important; /* Medium Gray on Hover */
+  color: white !important;
 }
 
 /* Style for "Contact" text color */
 .contact-link > .nav-link {
-    color: #696969 !important; /* Darker Gray for Contact text */
+  color: #696969 !important; /* Darker Gray for Contact text */
 }
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1000px) {
+  /* Hide hamburger */
+  .navbar-toggler {
+    display: none !important;
+  }
+
+  /* Flex layout for top navbar */
+  .navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  /* Second header styling */
+  .second-header {
+    background-color: #f8f9fa;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ddd;
+  }
+
+  .second-header .left-section a {
+    font-weight: 600;
+    text-decoration: none;
+    color: #007bff;
+  }
+
+  .second-header .right-section {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .second-header .right-section a {
+    color: #000;
+    text-decoration: none;
+    position: relative;
+  }
+
+  /* Remove caret icons */
+  .second-header .right-section .dropdown-toggle::after {
+    display: none !important;
+  }
+
+  /* Dropdown on hover */
+  .second-header .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .second-header .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    min-width: 180px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .second-header .dropdown-menu .dropdown-item {
+    padding: 8px 16px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+  }
+
+  .second-header .dropdown-menu .dropdown-item:hover {
+    background-color: #f1f1f1;
+  }
+/* Style for "Find Workers" */
+.worker-dropdown > .nav-link {
+    color: white !important;
+    background-color: #c9c7b3 !important; /* Dark Purple */
+}
+
+
+}
+/* Desktop-only nav styles */
+/* Force horizontal layout */
+@media (min-width: 1000px) {
+    .forced-horizontal {
+      display: flex !important;
+      flex-direction: row !important;
+      gap: 30px !important;
+      align-items: center !important;
+    }
+  
+    .forced-horizontal .nav-item {
+      position: relative;
+      white-space: nowrap; /* Prevent wrapping */
+    }
+  
+    .forced-horizontal .nav-link {
+      background: none !important;
+      color: inherit !important;
+      font-weight: 500;
+      padding: 8px 12px;
+    }
+  
+    /* Dropdown display */
+    .forced-horizontal .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      z-index: 1000;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    .forced-horizontal .nav-item:hover .dropdown-menu {
+      display: block;
+    }
+  
+    
+
+  }
+  
+  @media (min-width: 1000px) {
+    .worker-dropdown > .nav-link {
+      color: rgb(0, 0, 0) !important;
+      background-color: #ffffff !important; /* Dark Purple */
+  }
+
+
+
+  }
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .slider-container {
     width: 100%; /* Adjust as needed */
-    height: 420px; /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
     overflow: hidden;
     position: relative;
     margin-top: 0 !important;
     margin: 50px auto;
     border: 1px solid #ccc;
+    align-items: center;
 }
 
 .slider {
@@ -194,8 +444,9 @@
 .slide img {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Maintain image aspect ratio and cover the container */
+    height: 400px;
+    object-fit: cover; 
+    overflow: hidden;/* Maintain image aspect ratio and cover the container */
 }
 
 .slide-content {
@@ -203,6 +454,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 400px!important;
     display: flex;
     flex-direction: column; /* Keep vertical arrangement */
     align-items: flex-start; /* Align items (including the button) to the left horizontally */
@@ -212,6 +464,33 @@
     text-align: center;
     padding: 20px;
     box-sizing: border-box; /* Include padding in width and height */
+} 
+.btn-container{
+    display: flex;
+    flex-direction: center; /* Keep vertical arrangement */
+    align-items: center; /* Align items (including the button) to the left horizontally */
+    
+}
+
+.small-text {
+    margin-top: 40px!important;
+    margin-left: 70px!important;
+    font-size: 20px !important;
+
+}
+
+.tpbtn {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 4px solid rgb(255, 255, 255) !important;
+    padding: 8px 40px !important;
+    border-radius: 70px !important;
+    cursor: pointer;
+    font-size: 22px !important;
+    font-weight: 20em !important; /* Note: 'em' unit might not be intended here for font-weight */
+    margin-top: 20px !important;
+    
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .slide-content h2 {
@@ -295,13 +574,151 @@
     border-color: white;
 }
 
+
+
+
+
+
+
+@media (max-width: 500px) {
+    .slider-container {
+        width: 100%; /* Adjust as needed */
+        height: 300px; /* Adjust as needed */
+        overflow: hidden;
+        position: relative;
+        margin-top: 0 !important;
+        margin: 10px auto;
+        border: 1px solid #ccc;
+        align-items: center;
+    }
+    
+    .slider {
+        display: flex;
+        width: 200%; /* To accommodate two slides side-by-side initially */
+        transition: transform 0.5s ease-in-out;
+        transform: translateX(0); /* Start at the first slide */
+    }
+    
+    .slide {
+        width: 50%; /* Each slide takes up half the slider width */
+        flex-shrink: 0; /* Prevent slides from shrinking */
+        position: relative;
+    }
+    
+    .slide img {
+        display: block;
+        width: 100%;
+        height: 300px;
+        object-fit: cover; 
+          
+    }
+    
+    .slide-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 300px!important;
+        display: flex;
+        flex-direction: column; /* Keep vertical arrangement */
+        align-items: center; /* Align items (including the button) to the left horizontally */
+         
+        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+        color: white;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box; /* Include padding in width and height */
+    } 
+    
+    .slide-content h2 {
+        margin-top: 50px;
+        margin-left: 0px;
+        margin-bottom: 1px;
+        text-align: center;
+        font-size: 28px; 
+        font-weight: 650;
+    }
+
+    .txt2 {
+        margin-top: 1px !important;
+        margin-left: 0px;
+        margin-bottom: 1px;
+        text-align: center;
+        font-size: 28px!important; 
+        font-weight: 650;
+    }
+
+    .slide-content p {
+        margin-top: 5px;
+        margin-left: 2px;
+        margin-right: 2px;
+        margin-bottom: 15px; 
+        font-size: 16px; 
+        font-weight: 500;
+        text-align: center;
+    }
+    .btn-container{
+        display: flex;
+        flex-direction: ; /* Keep vertical arrangement */
+        align-items: center; /* Align items (including the button) to the left horizontally */
+        
+    }
+
+    .small-text {
+        margin-top: 20px!important;
+        margin-left: 10px!important;
+        font-size: 12px !important;
+
+    }
+
+    .tpbtn {
+        background-color: transparent !important;
+        color: #ffffff !important;
+        border: 2px solid rgb(255, 255, 255) !important;
+        padding: 5px 13px !important;
+        border-radius: 75px !important;
+        cursor: pointer;
+        font-size: 13px !important;
+        font-weight: 2em !important; /* Note: 'em' unit might not be intended here for font-weight */
+         margin-right: 30px;
+         margin-top: 10px!important;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .imgcnt .appicon:first-child {
+        margin-right: 20px; /* Adjust the value as needed */
+      }
+
+    .appicon {
+       margin-left: 2px;
+       margin-top: 20px;
+       gap: 10px !important;
+        width: 130px !important; /* Adjust as needed */
+        height: auto !important;
+        margin-right: 1px; /* Add some space between the icons */
+        display: inline-block !important; /* Ensure icons are inline */
+        transition: transform 0.3s ease-in-out; /* Add a smooth transition */
+    }
+    
+  
+
+
+}
+
+
+
+
+
+
+
 .work-description {
     padding: 8%;
-   
+    padding-top: 0% !important;
+    padding-bottom: 5% !important;
     color: #333333; /* Grey text */
     background-color: rgba(0, 0, 0, 0); /* Transparent background */
     font-family: 'avenir_next_lt_proregular', sans-serif !important;
-    font-size: 55px;
+    font-size: 40px;
     font-weight: 500;
     font-stretch: 100%;
     font-style: normal;
@@ -310,6 +727,22 @@
     text-align: center; /* Centralize text */
     text-indent: 0px;
   }
+
+  .bolds {
+    padding: 8%;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    color: #333333; /* Grey text */
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    font-family: 'avenir_next_lt_proregular', sans-serif !important;
+    font-size: 60px;
+    font-weight: 600;
+    font-stretch: 100%;
+    
+    text-align: center; /* Centralize text */
+    text-indent: 0px;
+  }
+  
    .bold {
     padding: 8%;
     margin-bottom: 0px !important;
@@ -324,7 +757,74 @@
     text-align: center; /* Centralize text */
     text-indent: 0px;
   }
- 
+
+
+  @media (max-width: 699px) {
+    
+    .work-description {
+        padding: 4%;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        color: #333333; /* Grey text */
+        background-color: rgba(0, 0, 0, 0); /* Transparent background */
+        font-family: 'avenir_next_lt_proregular', sans-serif !important;
+        font-size: 23px;
+        font-weight: 500;
+        font-stretch: 100%;
+        font-style: normal;
+        line-height: 1.8;
+        letter-spacing: normal;
+        text-align: center; /* Centralize text */
+        text-indent: 0px;
+        font-weight: 400;
+      }
+       .bold {
+        padding: 5%;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+        color: #505050; /* Grey text */
+        background-color: rgba(0, 0, 0, 0); /* Transparent background */
+        font-family: 'avenir_next_lt_proregular', sans-serif !important;
+        font-size: 28px;
+        font-weight: 600;
+        font-stretch: 100%;
+        
+        text-align: center; /* Centralize text */
+        text-indent: 0px;
+      }
+
+
+      .bolds {
+        padding: 5%;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+        color: #505050; /* Grey text */
+        background-color: rgba(0, 0, 0, 0); /* Transparent background */
+        font-family: 'avenir_next_lt_proregular', sans-serif !important;
+        font-size: 28px;
+        font-weight: 600;
+        font-stretch: 100%;
+        
+        text-align: center; /* Centralize text */
+        text-indent: 0px;
+      }
+    
+      .line {
+        margin: 0px!important;
+        padding: 0;
+        
+            width: 300px !important;
+            height: 30px !important;
+             /* Scale the image down to fit within the container, maintaining aspect ratio */
+          
+      }
+
+  }
+
+
+
   .business-benefits {
     padding: 8%;
     margin-top: 0px !important;
@@ -346,6 +846,22 @@
   .line {
     margin-bottom: auto;
     padding: 0;
+    
+        width: 200px;
+        height: 150px;
+        object-fit: contain; /* Scale the image down to fit within the container, maintaining aspect ratio */
+      
+  }
+
+  .lines {
+    margin: 0;
+    margin-bottom:auto !important;
+    padding: 0;
+    
+        width: 500px;
+        height: 50px;
+        object-fit: contain; /* Scale the image down to fit within the container, maintaining aspect ratio */
+      
   }
 
   .benefit-img {
@@ -353,6 +869,355 @@
     height: 100%;
     object-fit: cover;
   }
+  .benefit-img2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+
+  /* Business Benefits */
+/* Assuming .business-benefits class is defined elsewhere if needed */
+.svg-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E3EAF2;
+}
+
+.svg-circle-wrapper {
+    position: relative;
+    margin-top: 150px !important;
+    margin-bottom: 10px !important;
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.svg-icon {
+    width: 180px !important;
+    margin-top: 25px !important;
+    object-fit: contain;
+    filter: grayscale(100%) sepia(25%) brightness(110%) hue-rotate(185deg) saturate(300%);
+    transition: filter 0.3s ease;
+}
+
+.svg-text {
+    margin-top: 70px;
+    color: #333333; /* Grey text */
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    font-family: 'avenir_next_lt_proregular', sans-serif !important;
+    font-size: 40px;
+    text-align: center;
+    width: 100%; /* Make the text span the full width of its parent */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 0 10px; /* Add some horizontal padding for better readability if needed */
+}
+
+.svg-circle-wrapper:hover .svg-icon,
+.svg-circle-wrapper.active .svg-icon {
+    filter: none;
+}
+
+/* Remove background color on hover or active */
+.svg-circle-wrapper:hover .svg-icon,
+.svg-circle-wrapper.active .svg-icon {
+    background-color: transparent;
+}
+
+.bsbtn {
+    background-color: transparent !important;
+    color: #3a4c61 !important;
+    border: 3px solid rgb(128, 123, 123) !important;
+    padding: 15px 80px !important;
+    border-radius: 70px !important;
+    cursor: pointer;
+    font-size: 40px !important;
+    font-weight: 20em !important; /* Note: 'em' unit might not be intended here for font-weight */
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bsbtn:hover {
+    background-color: rgb(255, 255, 255);
+     /* You might want to define text color on hover, e.g., color: #3a4c61; */
+    color: white; /* Kept original, but might not be desired */
+    border-color: white;
+}
+
+
+@media (max-width: 699px) {
+
+    .svg-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #E3EAF2;
+    }
+    
+    .svg-circle-wrapper {
+        position: relative;
+        margin-top: 70px !important;
+        margin-bottom: 10px !important;
+        width: 30px;
+        height: 30px;
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    
+    .svg-icon {
+        width: 80px !important;
+        margin-top: 25px !important;
+        object-fit: contain;
+        filter: grayscale(100%) sepia(25%) brightness(110%) hue-rotate(185deg) saturate(300%);
+        transition: filter 0.3s ease;
+    }
+    
+    .svg-text {
+        margin-top: 30px;
+        color: #333333; /* Grey text */
+        background-color: rgba(0, 0, 0, 0); /* Transparent background */
+        font-family: 'avenir_next_lt_proregular', sans-serif !important;
+        font-size: 18px;
+        text-align: center;
+        width: 100%; /* Make the text span the full width of its parent */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        padding: 0 10px; /* Add some horizontal padding for better readability if needed */
+    }
+    
+    .svg-circle-wrapper:hover .svg-icon,
+    .svg-circle-wrapper.active .svg-icon {
+        filter: none;
+    }
+    
+    /* Remove background color on hover or active */
+    .svg-circle-wrapper:hover .svg-icon,
+    .svg-circle-wrapper.active .svg-icon {
+        background-color: transparent;
+    }
+    
+    .bsbtnsv {
+        background-color: transparent !important;
+        color: #3a4c61 !important;
+        border: 2px solid rgb(150, 146, 146) !important;
+        padding: 5px 30px !important;
+        border-radius: 70px !important;
+        cursor: pointer;
+        font-size: 20px !important;
+        font-weight: 20em !important; /* Note: 'em' unit might not be intended here for font-weight */
+        margin-top: 60px !important;
+        margin-bottom: 60px !important;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .bsbtnsv:hover {
+        background-color: rgb(255, 255, 255);
+         /* You might want to define text color on hover, e.g., color: #3a4c61; */
+        color: white; /* Kept original, but might not be desired */
+        border-color: white;
+    }
+    
+
+
+}
+
+
+
+  @media (max-width: 699px) {
+    
+    .business-benefits {
+        padding: 0%;
+         /* Set the color of the border (e.g., red, #333, rgba(0, 0, 0, 0.8)) */
+     
+
+        padding: 4%;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        color: #333333; /* Grey text */
+        background-color: rgb(207, 203, 203);/* Transparent background */
+        font-family: 'avenir_next_lt_proregular', sans-serif !important;
+        font-size: 23px;
+        font-weight: 500;
+        font-stretch: 100%;
+        font-style: normal;
+        line-height: 1.8;
+        letter-spacing: normal;
+        text-align: center; /* Centralize text */
+        text-indent: 0px;
+        font-weight: 400;
+        border-top-width: 2px;        /* Set the thickness of the border (e.g., 1px, 3px, thick) */
+        border-top-style: solid;      /* Set the style of the border (e.g., solid, dashed, dotted, double) */
+        border-top-color: rgb(185, 185, 185); 
+    }
+    
+      
+      .benefit-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+  }
+
+
+
+
+
+  @media (min-width: 700px) {
+    .business-benefits-container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        background-color: #E3EAF2;
+        margin-right:0 !important;
+    }
+
+    .benefit-image-container {
+        flex: 1;
+        max-height:200px !important;
+        margin-right: 0px;
+        background-color: #E3EAF2;
+    }
+
+    .benefit-img {
+        width: 100%;
+        height: auto;
+        max-height:552px !important;
+        object-fit: cover;
+    }
+
+    .right-content {
+        flex: 1;
+        position: relative; /* For pseudo-element positioning */
+        padding-bottom: 90px; /* Space for the background */
+        overflow: hidden;
+    }
+
+    .right-content::before {
+        content: "";
+        position: absolute;
+        left: -20px; /* Align with the left edge of the image */
+        right: 0;
+        bottom: 0;
+        height: 60px; /* Height of the background area */
+        background-color: #E3EAF2; /* Example background color */
+        z-index: -1; /* Place the background behind the button */
+    }
+
+    .business-benefits {
+        text-align: left;
+        font-size: 40px;
+        line-height: 1.2;
+        padding-left: 0;
+        padding-top: 0;
+        margin-bottom: 2px;
+        margin-right: 0px !important;
+        background-color: #E3EAF2; /* Example background color */
+
+    }
+
+    .line {
+       display: none;
+       
+    }
+
+    .svg-container {
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        gap: 50px 10px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: -10px; /* Remove space above the button */
+    }
+
+    .svg-circle-wrapper {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        width: 80px;
+        height: 80px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .svg-icon {
+        width: 100% !important;
+        height: 100% !important;
+        margin-top: 0 !important;
+        margin-left: 70px !important;
+        object-fit: contain;
+    }
+
+    .svg-text {
+        margin-top: 0;
+        text-align: left;
+        font-size: 24px;
+        padding: 0;
+        width: auto;
+    }
+
+    .bold {
+        padding-left: 30px;
+        padding-top: 30px;
+        margin-top: 0px !important;
+        padding-right: 0px !important;
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+        color: #333333; /* Grey text */
+        background-color: ; /* Transparent background */
+        font-family: 'avenir_next_lt_proregular', sans-serif !important;
+        font-size: 40px!important;
+        font-weight: 600;
+        font-stretch: 100%;
+        
+        text-align: left; /* Centralize text */
+        text-indent: 0px;
+      }
+
+    .bsbtnsv {
+        background-color: transparent !important;
+        color: #3a4c61 !important;
+        border: 2px solid rgb(150, 146, 146) !important;
+        padding: 10px 40px !important;
+        border-radius: 70px !important;
+        font-size: 20px !important;
+        font-weight: bold !important;
+        text-align: center !important;
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: unset;
+
+        /* Position the button at the bottom and move it left and down */
+        position: absolute;
+        bottom: 10px; /* Increase this value to move it down */
+        left: 0;
+        width: auto;
+        margin-left: 20px;
+        z-index: 1;
+    }
+
+    .bsbtnsv:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: white;
+        border-color: white;
+    }
+}
+
+
+
+
 
 /* Tasker Benefits */
 .business-benefits2 {
@@ -433,7 +1298,8 @@
     cursor: pointer;
     font-size: 40px !important;
     font-weight: 20em !important; /* Note: 'em' unit might not be intended here for font-weight */
-    margin: 60px !important;
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -444,79 +1310,238 @@
     border-color: white;
 }
 
-/* Business Benefits */
-/* Assuming .business-benefits class is defined elsewhere if needed */
-.svg-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #E3EAF2;
+
+
+
+
+@media (max-width: 699px) {
+
+    .business-benefits2 {
+        padding: 8%;
+        margin-top: 0px !important;
+        margin-bottom: 0 !important;
+    
+        color: #ffffff !important; /* Grey text */
+        background-color: #3F6EAA; /* Transparent background */
+        font-family: 'avenir_next_lt_proregular', sans-serif !important;
+        font-size: 23px;
+        font-weight: 500;
+        font-stretch: 100%;
+        font-style: normal;
+        line-height: 1.8;
+        letter-spacing: normal;
+        text-align: center; /* Centralize text */
+        text-indent: 0px;
+        font-weight: 400;
+        border-top-width: 2px;        /* Set the thickness of the border (e.g., 1px, 3px, thick) */
+        border-top-style: solid;      /* Set the style of the border (e.g., solid, dashed, dotted, double) */
+        border-top-color: rgb(185, 185, 185); 
+    }
+    
+    .business-benefits2 h1 {
+        color: #ffffff !important; /* Grey text */
+    }
+    
+    .svg-container2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #3F6EAA;
+    }
+    
+    .svg-circle-wrapper2 {
+        position: relative;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        width: 100px;
+        height: 100px;
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    
+    .svg-icon2 {
+        width: 80px !important;
+        margin-top: 25px !important;
+        object-fit: contain;
+        filter: grayscale(100%) sepia(25%) brightness(110%) hue-rotate(185deg) saturate(300%) !important;
+        transition: filter 0.3s ease;
+    }
+    
+    .svg-text2 {
+        margin-top: 30px;
+        color: #ffffff; /* Grey text */
+        background-color: rgba(0, 0, 0, 0); /* Transparent background */
+        font-family: 'avenir_next_lt_proregular', sans-serif !important;
+        font-size: 18px;
+        text-align: center;
+        width: 100%; /* Make the text span the full width of its parent */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        padding: 0 10px; /* Add some horizontal padding for better readability if needed */
+    }
+    
+    .svg-circle-wrapper2:hover .svg-icon2,
+    .svg-circle-wrapper2.active .svg-icon2 {
+        filter: none;
+        background-color: transparent;
+    }
+    
+    .bsbtnsv2 {
+        background-color: rgb(255, 255, 255) !important;
+        
+        color: #696969 !important;
+        border: 2px solid rgb(255, 255, 255) !important;
+        padding: 5px 30px !important;
+        border-radius: 70px !important;
+        cursor: pointer;
+        font-size: 20px !important;
+        font-weight: 20em !important; /* Note: 'em' unit might not be intended here for font-weight */
+        margin-top: 60px !important;
+        margin-bottom: 60px !important;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .bsbtnsv2:hover {
+        background-color: transparent !important;
+        /* You might want to define text color on hover, e.g., color: #3F6EAA; */
+        color: white !important; /* Kept original, but might not be desired */
+        border-color: white;
+    }
+    
 }
 
-.svg-circle-wrapper {
-    position: relative;
-    margin-top: 150px !important;
-    margin-bottom: 10px !important;
-    width: 100px;
-    height: 100px;
-    margin: 10px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+
+
+
+
+@media (min-width: 700px) {
+    .business-benefits-container2 {
+        display: flex;
+        flex-direction: row; /* To put image on left */
+        align-items: flex-start;
+        background-color: #3F6EAA;
+        margin-right: 0 !important;
+    }
+
+    .right-image-container2 {
+        flex: 0 0 50%; /* Takes up exactly 50% width */
+        max-height: 200px !important; /* You might want to adjust or remove this */
+        margin-right: 0px; /* Space between image and content */
+    }
+
+    .benefit-img2 {
+        width: 100%!important;
+        height: auto;
+        max-height: 570px !important;
+        object-fit: cover;
+    }
+
+    .left-content2 {
+        flex: 0 0 50%; /* Takes up the remaining 50% width */
+        position: relative; /* For pseudo-element positioning */
+        padding-bottom: 90px; /* Space for the background */
+        overflow: hidden;
+    }
+
+    .left-content2::before {
+        content: "";
+        position: absolute;
+        left: 0; /* Adjusted for left alignment */
+        right: -20px; /* Adjusted for left alignment */
+        bottom: 0;
+        height: 60px; /* Height of the background area */
+        background-color: #3F6EAA;
+        z-index: -1;
+    }
+
+    .business-benefits2 {
+        text-align: left;
+        font-size: 40px;
+        line-height: 1.2;
+        padding-left: 0;
+        padding-top: 0;
+        margin-bottom: 2px;
+        background-color: #3F6EAA;
+    }
+
+    .line.white {
+        display: none; /* As per your provided CSS */
+    }
+
+    .svg-container2 {
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        gap: 50px 10px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: -10px;
+    }
+
+    .svg-circle-wrapper2 {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        width: 80px;
+        height: 80px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .svg-icon2 {
+        width: 100% !important;
+        height: 100% !important;
+        margin-top: 0 !important;
+        margin-left: 70px !important;
+        object-fit: contain;
+    }
+
+    .svg-text2 {
+        margin-top: 0;
+        margin-right:10px;
+        text-align: left;
+        font-size: 24px;
+        padding: 0;
+        width: auto;
+    }
+
+    .bsbtnsv2 {
+        background-color: transparent !important;
+        color: #f3f6fa !important;
+        border: 2px solid rgb(255, 255, 255) !important;
+        padding: 10px 40px !important;
+        border-radius: 70px !important;
+        font-size: 20px !important;
+        font-weight: bold !important;
+        text-align: center !important;
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: unset;
+
+        position: absolute;
+
+        bottom: 10px; /* As per your provided CSS */
+        left: 50px; /* Adjusted for left alignment of content */
+        width: auto;
+        margin-left: 0; /* Resetting potential margin */
+        z-index: 1;
+    }
+
+    .bsbtnsv2:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: white;
+        border-color: white;
+    }
 }
 
-.svg-icon {
-    width: 180px !important;
-    margin-top: 25px !important;
-    object-fit: contain;
-    filter: grayscale(100%) sepia(25%) brightness(110%) hue-rotate(185deg) saturate(300%);
-    transition: filter 0.3s ease;
-}
 
-.svg-text {
-    margin-top: 70px;
-    color: #333333; /* Grey text */
-    background-color: rgba(0, 0, 0, 0); /* Transparent background */
-    font-family: 'avenir_next_lt_proregular', sans-serif !important;
-    font-size: 40px;
-    text-align: center;
-    width: 100%; /* Make the text span the full width of its parent */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    padding: 0 10px; /* Add some horizontal padding for better readability if needed */
-}
 
-.svg-circle-wrapper:hover .svg-icon,
-.svg-circle-wrapper.active .svg-icon {
-    filter: none;
-}
 
-/* Remove background color on hover or active */
-.svg-circle-wrapper:hover .svg-icon,
-.svg-circle-wrapper.active .svg-icon {
-    background-color: transparent;
-}
 
-.bsbtn {
-    background-color: transparent !important;
-    color: #3a4c61 !important;
-    border: 3px solid rgb(128, 123, 123) !important;
-    padding: 15px 80px !important;
-    border-radius: 70px !important;
-    cursor: pointer;
-    font-size: 40px !important;
-    font-weight: 20em !important; /* Note: 'em' unit might not be intended here for font-weight */
-    margin: 60px !important;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-.bsbtn:hover {
-    background-color: rgb(255, 255, 255);
-     /* You might want to define text color on hover, e.g., color: #3a4c61; */
-    color: white; /* Kept original, but might not be desired */
-    border-color: white;
-}
 
 .app-download {
     text-align: center; /* This will center the inline-block elements (images) */
@@ -526,7 +1551,7 @@
     margin-left: 25px;
     margin-top: 20px;
     
-     width: 400px !important; /* Adjust as needed */
+     width: 300px !important; /* Adjust as needed */
      height: auto !important;
      margin-right: 10px; /* Add some space between the icons */
      display: inline-block !important; /* Ensure icons are inline */
@@ -551,6 +1576,108 @@
     text-align: center; /* Centralize text */
     text-indent: 0px;
   }
+
+
+
+  @media (max-width: 699px) {
+    .bold2 {
+        padding: 8%;
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+        color: #6b6969; /* Grey text */
+        background-color: rgba(0, 0, 0, 0); /* Transparent background */
+        font-family: 'avenir_next_lt_proregular', sans-serif !important;
+        font-size: 30px;
+        font-weight: 600;
+        font-stretch: 100%;
+        
+        text-align: center; /* Centralize text */
+        text-indent: 0px;
+      }
+
+      .appicon2 {
+        margin-left: 2px;
+        margin-top: 20px;
+        
+         width: 160px !important; /* Adjust as needed */
+         height: auto !important;
+         margin-right: 10px; /* Add some space between the icons */
+         display: inline-block !important; /* Ensure icons are inline */
+         transition: transform 0.3s ease-in-out; /* Add a smooth transition */
+     }
+     
+     .appicon2:hover {
+         transform: scale(1.1); /* Scale the image up by 10% on hover */
+     }
+
+     .lines {
+        margin: 0;
+        margin-bottom:auto !important;
+        padding: 0;
+        
+            width: 250px;
+            height: 50px;
+            object-fit: contain; /* Scale the image down to fit within the container, maintaining aspect ratio */
+          
+      }
+  }
+
+
+  @media (min-width: 700px) {
+    
+.lines {
+        margin: 0;
+        margin-bottom:auto !important;
+        padding: 0;
+        
+            width: 500px;
+            height: 50px;
+            object-fit: contain; /* Scale the image down to fit within the container, maintaining aspect ratio */
+          
+      }
+
+
+    .bold2 {
+        padding: 8%;
+        margin-top: 0px !important;
+         
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+        color: #6b6969; /* Grey text */
+        background-color: rgba(0, 0, 0, 0); /* Transparent background */
+        font-family: 'avenir_next_lt_proregular', sans-serif !important;
+        font-size: 50px;
+        font-weight: 600;
+        font-stretch: 100%;
+        
+        text-align: center; /* Centralize text */
+        text-indent: 0px;
+      }
+
+      .appicon2 {
+        margin-left: 30px;
+        margin-top: 20px;
+        
+         width: 300px !important; /* Adjust as needed */
+         height: auto !important;
+         margin-right: 10px; /* Add some space between the icons */
+         display: inline-block !important; /* Ensure icons are inline */
+         transition: transform 0.3s ease-in-out; /* Add a smooth transition */
+     }
+     
+     .appicon2:hover {
+         transform: scale(1.1); /* Scale the image up by 10% on hover */
+     }
+  }
+
+
+
+
+
+
+
+ 
+
 
   .my-slide {
     display: none;
@@ -646,6 +1773,8 @@
     /* background-image: url(''); Removed inline style */
   }
   
+
+
   /* New CSS Rules for Data Attributes */
   .my-slider-background-image[data-bg-image] {
     background-image: var(--bg-image);
@@ -654,3 +1783,1202 @@
   .my-slide-icon[data-icon-image] {
     background-image: var(--icon-image);
   }
+
+
+
+  @media (max-width: 500px) {
+    
+
+    .my-slide {
+       display: none;
+       flex-direction: column;
+       align-items: center;
+       text-align: center;
+     }
+     
+     .my-slide-active {
+       display: flex;
+     }
+     
+     .my-slide-heading {
+       margin-top: 5px !important;
+       color: white;
+       position: relative;
+       z-index: 1;
+       font-size: 50px !important;
+       font-weight: 700;
+       font-family: 'avenir_next_lt_proregular', sans-serif !important;
+       margin-bottom: 0rem;
+       
+     }
+     
+     .my-slide-description {
+       color: #ffffff;
+       margin-top: 0rem;
+       margin-bottom: 10px !important;
+       font-size: 25px !important;
+       font-weight: 500;
+       position: relative;
+       z-index: 1;
+       font-family: 'avenir_next_lt_proregular', sans-serif !important;
+     }
+     
+     .my-slider-container {
+       margin-top: 50px;
+       width: 100%;
+       height: 300px!important;
+       display: grid;
+       align-items: center;
+        
+       overflow: hidden;
+       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+         0 2px 4px -1px rgba(0, 0, 0, 0.06);
+       position: relative;
+     }
+     
+     .my-slider-indicators {
+       display: flex;
+       justify-content: center;
+       margin-top: 1rem;
+       margin-bottom: 20px;
+       space-x: 0.5rem;
+       position: relative;
+       z-index: 1;
+     }
+     
+     .my-indicator {
+       margin-bottom: 50px !important;
+       height: 15px !important;
+       width: 0.2rem !important;
+       border-radius: 9999px;
+       background-color: rgba(255, 255, 255, 0.5);
+       transition-property: background-color;
+       transition-duration: 300ms;
+     }
+     
+     .my-indicator:hover {
+       background-color: rgba(255, 251, 251, 0) !important;
+     }
+     
+     .my-indicator.bg-opacity-100 {
+       background-color: rgba(255, 255, 255, 1);
+     }
+     
+     .my-slider-background-image {
+       position: absolute;
+       inset: 0;
+       background-size: cover;
+       background-position: center;
+       z-index: 0;
+       /* background-image: url('');  Removed inline style */
+     }
+     
+     .my-slide-icon {
+       margin-top: 60px !important;
+       margin-bottom: 0px !important;
+       height: 50px!important;
+       width: 70px!important;
+       margin-bottom: 1rem;
+       background-size: cover;
+       background-position: center;
+       position: relative;
+       z-index: 1;
+       /* background-image: url(''); Removed inline style */
+     }
+     
+     /* New CSS Rules for Data Attributes */
+     .my-slider-background-image[data-bg-image] {
+       background-image: var(--bg-image);
+     }
+     
+     .my-slide-icon[data-icon-image] {
+       background-image: var(--icon-image);
+     }
+   
+   
+
+ }
+
+
+
+ @media (min-width: 501px) and (max-width: 700px) {
+    .my-slider-container {
+        display: flex; /* Enable flexbox for horizontal layout */
+        height: auto !important;
+        align-items: center;
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
+        overflow-y: hidden;
+        padding: 20px;
+        position: relative;
+    }
+
+    .my-slide {
+        flex: 0 0 50%; /* Each slide takes up 50% width */
+        display: flex; /* Ensure content inside slides is displayed */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px; /* Add some spacing between slides */
+        box-sizing: border-box; /* Include padding in the 50% width */
+        min-width: 50%; /* Prevent slides from collapsing */
+    }
+
+    .my-slide-active {
+        /* We are now showing two slides by default on medium,
+           so we don't need to specifically target 'active' for display here */
+    }
+
+    .my-slider-indicators {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        margin-bottom: 0px!important;
+        padding-bottom: 0px!important;
+        space-x: 0.5rem;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+
+    .my-indicator {
+        
+        margin-bottom: 10px!important;
+        padding-bottom: 0px!important;
+    }
+
+    .my-slider-background-image {
+        display: block;
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+    }
+
+    .my-slide-heading {
+        font-size: 2.5rem !important;
+        margin-top: 10px !important;
+        margin-bottom: 0.2rem !important;
+        color: rgb(255, 255, 255) !important;
+        position: relative;
+        z-index: 1;
+        font-weight: 500;
+    }
+
+    .my-slide-description {
+        font-size: 1.2rem !important;
+        color: rgb(255, 255, 255) !important;
+        margin-top: 0.2rem !important;
+        margin-bottom: 15px !important;
+        position: relative;
+        z-index: 1;
+        font-weight: 500;
+    }
+
+    .my-slide-icon {
+        margin-top: 0 !important;
+        height: 60px !important;
+        width: 80px !important;
+        margin-bottom: 0.5rem !important;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@media (min-width: 701px) {
+    .my-slider-container {
+        display: flex;
+        height: auto !important;
+        align-items: center;
+        justify-content: space-around;
+        padding: 30px;
+    }
+
+    .my-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 30%; /* Adjust width for three horizontal slides */
+    }
+
+    .my-slide-active {
+        display: flex;
+    }
+
+    .my-slider-indicators {
+        display: none; /* Hide indicators on larger screens */
+    }
+
+    .my-slider-background-image {
+        display: block; /* Ensure background image is visible on larger screens */
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        
+    }
+
+    .my-slide-heading {
+        font-size: 3rem !important;
+        margin-top: 15px !important;
+        margin-bottom: 0.3rem !important;
+        color: rgb(255, 255, 255) !important;
+        position: static !important;
+        z-index: auto !important;
+        font-weight: 500;
+    }
+
+    .my-slide-description {
+        font-size: 1.5rem !important;
+        color: rgb(255, 255, 255) !important;
+        margin-top: 0.3rem !important;
+        margin-bottom: 20px !important;
+        position: static !important;
+        z-index: auto !important;
+        font-weight: 500;
+    }
+
+    .my-slide-icon {
+        margin-top: 0 !important;
+        height: 70px !important;
+        width: 90px !important;
+        margin-bottom: 0.7rem !important;
+        position: static !important;
+        z-index: auto !important;
+    }
+}
+
+
+
+
+
+
+
+  /* Amazing Partners */
+
+.image_slider_container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  .image_slider_wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: fit-content;
+  }
+  
+  .image_slide {
+    min-width: calc(50% - 1rem);
+    max-height: 100px;
+    margin: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+    border-radius: 0.5rem;
+  }
+  
+  .image_slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+  }
+  
+  /* Responsive adjustments */
+  @media (min-width: 500px) {
+    .image_slide {
+      min-width: calc(40.333% - 1.333rem); /* Show 3 images */
+      margin: 20px 10px;
+    }
+  }
+  
+  @media (min-width: 1000px) {
+    .image_slide {
+      min-width: calc(20% - 1.6rem); /* Show 5 images */
+      margin: 20px 8px;
+    }
+  }
+
+
+
+
+
+
+
+.hero-container {
+    background-image: url('images/bg_testimonials.jpg');
+    background-size: auto 900px !important; /* Set height to 480px, auto width */
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 800px; /* Or a specific height for the container itself */
+    overflow: hidden; /* Still useful for containing other elements */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+    height: 900px;
+    margin-top: 70px !important;
+    box-sizing: border-box;
+
+    font-family: 'avenir_next_lt_proregular', sans-serif !important;
+}
+
+.site-header {
+    color: rgb(0, 0, 0); /* Header text color */
+    padding: 2px; /* Space inside the header */
+    text-align: center; /* Center header content */
+    z-index: 50; /* Ensure it's above the background */
+    margin-top: 40px !important;
+}
+
+.site-header h1 {
+    margin-bottom: 10px;
+    
+    padding:0px;
+}
+
+.hero-body {
+    width: 80%; /* Control the width of the slider and controls */
+    max-width: 1200px; /* Optional: maximum width */
+    margin-top: 100px; /* Space below the header */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the slider and controls */
+}
+
+.content-slider {
+    overflow: hidden; /* Hide content beyond the slider's bounds */
+    width: 100%; /* Width of the visible slider area */
+    margin-bottom: 25px; /* Space below the slider */
+}
+
+.slider-track {
+    display: flex; /* Arrange slides horizontally */
+    transition: transform 0.6s ease-in-out; /* Smooth sliding animation */
+}
+
+.slider-item {
+    flex-shrink: 0; /* Prevent slides from shrinking */
+    width: 100%; /* Each slide takes full width */
+    text-align: center; /* Center text within the slide */
+    color: rgb(0, 0, 0); /* Default slide text color */
+    font-size: 40px; /* Readable text size */
+    padding: 10px 2px; /* More vertical padding for visual separation */
+    box-sizing: border-box; /* Include padding in width */
+    
+    border-radius: 8px; /* Optional: rounded corners for slides */
+}
+
+.slider-item.is-active {
+     /* Highlight the active slide */
+    text-shadow: 0 0 10px rgba(146, 146, 48, 0.8); /* Gentle glow for active */
+}
+
+.slider-controls {
+    display: flex; /* Arrange controls horizontally */
+    gap: 12px; /* Space between controls */
+}
+
+.control-button {
+    width: 18px; /* Size of the control button */
+    height: 18px;
+    border-radius: 50%; /* Make it circular */
+    background-color: rgba(200, 200, 220, 0.6); /* Default button color */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Indicate interactivity */
+    outline: none; /* Remove default focus outline */
+}
+
+.control-button.is-active {
+    background-color: rgb(14, 13, 13); /* Color of the active button */
+    box-shadow: 0 0 8px gold; /* Glow for the active button */
+}
+
+.bold3 {
+    padding: 8%;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    color: #000000; /* Grey text */
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    font-family: 'avenir_next_lt_proregular', sans-serif !important;
+    font-size: 60px;
+    font-weight: 600;
+    font-stretch: 100%;
+    text-align: center; /* Centralize text */
+    text-indent: 0px;
+  }
+
+  @media (max-width: 980px) {
+    .bold3 {
+        padding: 8%;
+        margin-bottom: 5px !important;
+        padding-bottom: 0px !important;
+        color: #000000; /* Grey text */
+        background-color: rgba(0, 0, 0, 0); /* Transparent background */
+        font-family: 'avenir_next_lt_proregular', sans-serif !important;
+        font-size: 25px;
+        font-weight: 600;
+        font-stretch: 100%;
+        text-align: center; /* Centralize text */
+        text-indent: 0px;
+      }
+
+      .hero-container {
+        background-image: url('images/bg_testimonials.jpg');
+        background-size: auto 550px !important; /* Set height to 480px, auto width */
+        background-repeat: no-repeat;
+        background-position: center top;
+        height: 800px; /* Or a specific height for the container itself */
+        overflow: hidden; /* Still useful for containing other elements */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 20px;
+        height: 550px;
+        margin-top: 70px !important;
+        box-sizing: border-box;
+    
+        font-family: 'avenir_next_lt_proregular', sans-serif !important;
+    }
+    
+    .site-header {
+        color: rgb(0, 0, 0); /* Header text color */
+        padding: 2px; /* Space inside the header */
+        text-align: center; /* Center header content */
+        z-index: 50; /* Ensure it's above the background */
+        margin-top: 40px !important;
+    }
+    
+    .site-header h1 {
+        margin-bottom: 10px;
+        
+        padding:0px;
+    }
+    
+    .hero-body {
+        width: 80%; /* Control the width of the slider and controls */
+        max-width: 800px; /* Optional: maximum width */
+        margin-top: 40px; /* Space below the header */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the slider and controls */
+    }
+    
+    .content-slider {
+        overflow: hidden; /* Hide content beyond the slider's bounds */
+        width: 100%; /* Width of the visible slider area */
+        margin-bottom: 25px; /* Space below the slider */
+    }
+    
+    .slider-track {
+        display: flex; /* Arrange slides horizontally */
+        transition: transform 0.6s ease-in-out; /* Smooth sliding animation */
+    }
+    
+    .slider-item {
+        flex-shrink: 0; /* Prevent slides from shrinking */
+        width: 100%; /* Each slide takes full width */
+        text-align: center; /* Center text within the slide */
+        color: rgb(0, 0, 0); /* Default slide text color */
+        font-size: 18px; /* Readable text size */
+        padding: 10px 5px; /* More vertical padding for visual separation */
+        box-sizing: border-box; /* Include padding in width */
+        
+        border-radius: 8px; /* Optional: rounded corners for slides */
+    }
+    
+    .slider-item.is-active {
+         /* Highlight the active slide */
+        text-shadow: 0 0 10px rgba(146, 146, 48, 0.8); /* Gentle glow for active */
+    }
+    
+    .slider-controls {
+        display: flex; /* Arrange controls horizontally */
+        gap: 12px; /* Space between controls */
+    }
+    
+    .control-button {
+        width: 12px; /* Size of the control button */
+        height: 12px;
+        border-radius: 50%; /* Make it circular */
+        background-color: rgba(200, 200, 220, 0.6); /* Default button color */
+        border: none; /* Remove default border */
+        cursor: pointer; /* Indicate interactivity */
+        outline: none; /* Remove default focus outline */
+    }
+    
+    .control-button.is-active {
+        background-color: rgb(14, 13, 13); /* Color of the active button */
+        box-shadow: 0 0 8px gold; /* Glow for the active button */
+    }
+
+  }
+
+
+
+  .gradient-container {
+    background: linear-gradient(to bottom, #4C76AA, #423974);
+     
+    height: 700px; /* Use 100vh for full viewport height */
+    display: block; /* For vertical and horizontal centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center text within the div */
+    padding: 20px; /* Add some padding around the text */
+    box-sizing: border-box; /* Include padding in width/height */
+}
+
+.gradient-text {
+    font-size: 2em; /* Larger font size */
+    color: white; /* White text for contrast */
+   
+    font-family: sans-serif; /* Use a sans-serif font */
+    /* Optional: Add a text shadow for better readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.bold4 {
+    padding-top:70px !important;
+    padding: 0%;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    color: #ffffff; /* Grey text */
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    font-family: 'avenir_next_lt_proregular', sans-serif !important;
+    font-size: 60px;
+    font-weight: 600;
+    font-stretch: 100%;
+    text-align: center; /* Centralize text */
+    text-indent: 0px;
+  }
+
+  .svg-text3 {
+    margin: 70px auto 0 auto;
+    
+    color: #ffffff; /* Grey text */
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    font-family: 'avenir_next_lt_proregular', sans-serif !important;
+    font-size: 40px;
+    text-align: center;
+    max-width: 1500px;
+    width: 100%; /* Make the text span the full width of its parent */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 0 10px; /* Add some horizontal padding for better readability if needed */
+}
+
+.bsbtn2 {
+    background-color: white !important;
+    color: #000000 !important;
+    border: 3px solid rgb(128, 123, 123) !important;
+    padding: 15px 80px !important;
+    border-radius: 70px !important;
+    cursor: pointer;
+    font-size: 40px !important;
+    font-weight: 20em !important; /* Note: 'em' unit might not be intended here for font-weight */
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bsbtn2:hover {
+    background-color: #3a4c61 !important;
+     /* You might want to define text color on hover, e.g., color: #3a4c61; */
+    color: white; /* Kept original, but might not be desired */
+    border-color: white;
+}
+
+
+@Media (max-width: 890px) {
+
+    .gradient-container {
+        background: linear-gradient(to bottom, #4C76AA, #423974);
+        height: 300px; /* Use 100vh for full viewport height */
+        display: block; /* For vertical and horizontal centering */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        text-align: center; /* Center text within the div */
+        padding: 20px; /* Add some padding around the text */
+        box-sizing: border-box; /* Include padding in width/height */
+    }
+    
+    .gradient-text {
+        font-size: 2em; /* Larger font size */
+        color: white; /* White text for contrast */
+        font-family: sans-serif; /* Use a sans-serif font */
+        /* Optional: Add a text shadow for better readability */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .bold4 {
+        padding-top:30px !important;
+        padding: 0%;
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+        color: #ffffff; /* Grey text */
+        background-color: rgba(0, 0, 0, 0); /* Transparent background */
+        font-family: 'avenir_next_lt_proregular', sans-serif !important;
+        font-size: 25px;
+        font-weight: 600;
+        font-stretch: 100%;
+        text-align: center; /* Centralize text */
+        text-indent: 0px;
+      }
+    
+      .svg-text3 {
+        margin-top: 20px;
+        color: #ffffff; /* Grey text */
+        font-weight: 600;
+        background-color: rgba(0, 0, 0, 0); /* Transparent background */
+        font-family: 'avenir_next_lt_proregular', sans-serif !important;
+        font-size: 15px;
+        line-height: 150%;
+        text-align: center;
+        width: 100%; /* Make the text span the full width of its parent */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        padding: 0 10px; /* Add some horizontal padding for better readability if needed */
+    }
+    
+    .bsbtn2 {
+        background-color: white !important;
+        color: #000000 !important;
+        border: 2px solid rgb(100, 100, 100) !important;
+        padding: 8px 30px !important;
+        border-radius: 70px !important;
+        cursor: pointer;
+        font-size: 20px !important;
+        font-weight: 20em !important; /* Note: 'em' unit might not be intended here for font-weight */
+        margin-top: 20px !important;
+        margin-bottom: 60px !important;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .bsbtn2:hover {
+        background-color: #1f334b !important;
+        color: #ffffff !important;
+         /* You might want to define text color on hover, e.g., color: #3a4c61; */
+        color: white; /* Kept original, but might not be desired */
+        border-color: white;
+    }
+
+
+
+
+
+
+
+    .lineimg, .lineimgs {
+        margin: 10px!important;
+        padding: 0;
+         
+            width: 300px !important;
+            height: 90px !important;
+             /* Scale the image down to fit within the container, maintaining aspect ratio */
+          
+      }
+
+}
+
+@media (min-width: 500px) {
+    
+    .work-description {
+        padding-top: 30px !important;
+        align-items: center!important;      /* Vertical centering */
+        justify-content: center;  /* Optional: horizontal centering too */
+    }
+    
+   
+}
+
+
+
+
+
+
+
+.news-slider-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  .news-slider-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 100;
+    scroll-behavior: smooth;
+  }
+  
+  .news-slider-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .news-slider-wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .news-slider-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .news-slider-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .news-slider-date {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 5px;
+  }
+  
+  .news-slider-heading {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .news-slider-text {
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  .news-slider-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .news-slider-indicator-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .news-slider-indicator-circle.active {
+    background-color: #007bff;
+  }
+  
+  @media (min-width: 768px) {
+    .news-slider-item {
+      flex: 0 0 50%;
+    }
+    .news-slider-wrapper {
+      scroll-snap-type: x proximity;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .news-slider-item {
+      flex: 0 0 33.33%;
+    }
+  }
+
+
+@media (max-width: 500px) {
+
+    .news-slider-container {
+        overflow: hidden;
+        position: relative;
+       max-height: 500px;
+        width: 100%;
+      }
+      
+      .news-slider-wrapper {
+        display: flex;
+        margin-bottom: 1px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        width: 100;
+        scroll-behavior: smooth;
+      }
+      
+      .news-slider-wrapper::-webkit-scrollbar {
+        display: none;
+      }
+      
+      .news-slider-wrapper {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      
+      .news-slider-item {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        padding: 15px;
+        border: 0px;
+        margin-bottom: 20px;
+        background-color: #fff;
+        width: 100%;
+         
+      }
+      
+      .news-slider-image {
+        width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      
+      .news-slider-date {
+        font-size: 0.9em;
+        color: #888;
+        margin-bottom: 5px;
+      }
+      
+      .news-slider-heading {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      
+      .news-slider-text {
+        line-height: 1.5;
+        color: #555;
+      }
+      
+      .news-slider-indicator {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 130px;
+      }
+      
+      .news-slider-indicator-circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #ccc;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+      
+      .news-slider-indicator-circle.active {
+        background-color: #007bff;
+      }
+
+}
+
+
+
+
+
+
+
+
+
+footer {
+    padding: 20px;
+    background-color: #f5f5f5;
+    font-family: 'avenir_next_lt_proregular', sans-serif !important;
+    font-size: 15px;
+    color: #333;
+  }
+  
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .footer-section {
+    flex: 1; /* Distribute available space equally */
+    margin-right: 20px;
+  }
+  
+  .footer-section:last-child {
+    margin-right: 0;
+  }
+  
+  .footer-section h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    font-weight: bolder;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
+  
+  .footer-section li {
+    text-shadow: 40px !important;
+    font-weight:bold;
+    margin-bottom: 5px;
+  }
+  
+  .footer-section a {
+    text-decoration: none;
+    color: #555;
+  }
+  
+  .app-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align app badges to the right */
+  }
+  
+  .app-badges img {
+    height: 40px;
+    margin-left: 10px;
+  }
+  
+  .app-badges img:first-child {
+    margin-left: 0;
+    margin-bottom: 5px;
+  }
+  
+  .newsletter-section {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  .newsletter-section h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+  }
+  
+  .newsletter-section p {
+    margin-bottom: 15px;
+    color: #555;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .newsletter-form input[type="email"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .newsletter-form button[type="submit"] {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .social-links a {
+    margin: 0 10px;
+    color: #777;
+    text-decoration: none;
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+  }
+  
+  .bottom-links a {
+    color: #777;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  
+  .bottom-links a:first-child {
+    margin-left: 0;
+  }
+  
+  .bottom-links .separator {
+    margin: 0 5px;
+  }
+
+
+  @media (max-width: 700px) {
+
+    footer {
+        padding: 20px;
+        background-color: #f5f5f5;
+        font-family: 'avenir_next_lt_proregular', sans-serif !important;
+        font-size: 15px;
+        color: #333;
+      }
+      
+      .footer-top {
+        display: block;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+      }
+      
+      .footer-section {
+        flex: 1; /* Distribute available space equally */
+        margin-right: 20px;
+      }
+      
+      .footer-section:last-child {
+        margin-right: 0;
+      }
+      
+      .footer-section h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 1.3em;
+        font-weight: bolder;
+      }
+      
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        }
+      
+      .footer-section li {
+        text-shadow: 40px !important;
+        font-weight:bold;
+        margin-bottom: 5px;
+      }
+      
+      .footer-section a {
+        text-decoration: none;
+        color: #555;
+      }
+      
+      .app-section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end; /* Align app badges to the right */
+      }
+      
+      .app-badges img {
+        height: 40px;
+        margin-left: 10px;
+      }
+      
+      .app-badges img:first-child {
+        margin-left: 0;
+        margin-bottom: 5px;
+      }
+      
+      .newsletter-section {
+        padding: 20px 0;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+      }
+      
+      .newsletter-section h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+      }
+      
+      .newsletter-section p {
+        margin-bottom: 15px;
+        color: #555;
+      }
+      
+      .newsletter-form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+      
+      .newsletter-form input[type="email"] {
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+      
+      .newsletter-form button[type="submit"] {
+        padding: 8px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      .social-links a {
+        margin: 0 10px;
+        color: #777;
+        text-decoration: none;
+      }
+      
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        font-size: 0.9em;
+        color: #777;
+      }
+      
+      .bottom-links a {
+        color: #777;
+        text-decoration: none;
+        margin-left: 10px;
+      }
+      
+      .bottom-links a:first-child {
+        margin-left: 0;
+      }
+      
+      .bottom-links .separator {
+        margin: 0 5px;
+      }
+    
+      @media (min-width: 500px) {
+        .footertop {
+          flex: 0 0 50%;
+        }
+         
+      }
+      
+      @media (min-width: 992px) {
+        .news-slider-item {
+          flex: 0 0 33.33%;
+        }
+      }
+
+  }
+
+
+
+
+
+
+
+
+
